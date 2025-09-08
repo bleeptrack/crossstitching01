@@ -101,8 +101,10 @@ for i in range(sizeY):  # Reduced from 10
         
 
 
-# pr_boundary = gdstk.rectangle((0, 0), (30, 30), layer=189, datatype=4)
-# cell.add(pr_boundary)
+# Add PR boundary (placement and routing boundary)
+# Layer 235, datatype 4 for sky130 PR boundary
+pr_boundary = gdstk.rectangle((0, 0), (sizeX*length, sizeY*length), layer=235, datatype=4)
+cell.add(pr_boundary)
 
 # active_dist = 1.5
 # active_size = 3.0 
