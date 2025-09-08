@@ -10,7 +10,7 @@ avg_width = 4  # Reduced from 3
 gap = 1  # Reduced from 1
 
 sizeX = 5
-sizeY = 5
+sizeY = 15
 
 
 x_width = [4] * sizeX
@@ -103,7 +103,7 @@ for i in range(sizeY):  # Reduced from 10
 
 # Add PR boundary (placement and routing boundary)
 # Layer 235, datatype 4 for sky130 PR boundary
-pr_boundary = gdstk.rectangle((0, 0), (sizeX*length, sizeY*length), layer=235, datatype=4)
+pr_boundary = gdstk.rectangle((0, 0), (sizeY*length, sizeX*length), layer=235, datatype=4)
 cell.add(pr_boundary)
 
 # active_dist = 1.5
