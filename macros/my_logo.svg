@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="446.6" height="446.6" viewBox="-23.3 -423.3 446.6 446.6">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="443.6" height="446.6" viewBox="-23.3 -423.3 443.6 446.6">
 <defs>
 <style type="text/css">
 .l235d4 {stroke: #0067A5; fill: #0067A5; fill-opacity: 0.5;}
 .l72d10 {stroke: #BE0032; fill: #BE0032; fill-opacity: 0.5;}
 </style>
 </defs>
-<rect x="-23.3" y="-423.3" width="446.6" height="446.6" fill="#222222" stroke="none"/>
+<rect x="-23.3" y="-423.3" width="443.6" height="446.6" fill="#222222" stroke="none"/>
 <g id="my_logo" transform="scale(1 -1)">
-<polygon id="0x28011c0" class="l72d10" points="-3,20 163,20 163,60 -3,60"/>
-<polygon id="0x2853790" class="l72d10" points="157,180 403,180 403,220 157,220"/>
-<polygon id="0x273abe0" class="l72d10" points="317,260 403,260 403,300 317,300"/>
-<polygon id="0x2677380" class="l72d10" points="237,340 403,340 403,380 237,380"/>
-<polygon id="0x2903c50" class="l72d10" points="20,77 60,77 60,403 20,403"/>
-<polygon id="0x29aef30" class="l72d10" points="100,77 140,77 140,403 100,403"/>
-<polygon id="0x29261b0" class="l72d10" points="180,-3 220,-3 220,163 180,163"/>
-<polygon id="0x2906a50" class="l72d10" points="180,237 220,237 220,403 180,403"/>
-<polygon id="0x293d2c0" class="l72d10" points="260,-3 300,-3 300,163 260,163"/>
-<polygon id="0x293fa30" class="l72d10" points="260,237 300,237 300,323 260,323"/>
-<polygon id="0x2980680" class="l72d10" points="340,-3 380,-3 380,163 340,163"/>
-<polygon id="0x299ff50" class="l235d4" points="0,0 400,0 400,400 0,400"/>
+<polygon id="0x237d740" class="l72d10" points="157,20 323,20 323,60 157,60"/>
+<polygon id="0x23c0600" class="l72d10" points="77,100 323,100 323,140 77,140"/>
+<polygon id="0x22df3e0" class="l72d10" points="-3,180 83,180 83,220 -3,220"/>
+<polygon id="0x23b32d0" class="l72d10" points="157,260 243,260 243,300 157,300"/>
+<polygon id="0x2210060" class="l72d10" points="77,340 243,340 243,380 77,380"/>
+<polygon id="0x24cb000" class="l72d10" points="20,-3 60,-3 60,163 20,163"/>
+<polygon id="0x251bf90" class="l72d10" points="20,237 60,237 60,403 20,403"/>
+<polygon id="0x24905e0" class="l72d10" points="100,-3 140,-3 140,83 100,83"/>
+<polygon id="0x24925f0" class="l72d10" points="100,157 140,157 140,323 100,323"/>
+<polygon id="0x231f450" class="l72d10" points="180,157 220,157 220,243 180,243"/>
+<polygon id="0x24c70b0" class="l72d10" points="260,157 300,157 300,403 260,403"/>
+<polygon id="0x24aa140" class="l72d10" points="340,-3 380,-3 380,403 340,403"/>
+<polygon id="0x24e0d50" class="l235d4" points="0,0 400,0 400,400 0,400"/>
 </g>
 </svg>
