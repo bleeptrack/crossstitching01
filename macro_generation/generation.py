@@ -107,8 +107,8 @@ for i in range(sizeX):  # Reduced from 10
             tx = start_x*(length)
             ty = i*(length)
         
-            #low_rect = gdstk.rectangle((tx+(length-horz_width)/2, ty), (tx+(length-horz_width)/2+horz_width, ty+length), layer=126)  # TopMetal1
-            rect = gdstk.rectangle((tx-start_stub, ty+(length-vert_width)/2), (tx+block_length+end_stub, ty+(length-vert_width)/2+vert_width), layer=126)  # TopMetal1
+            #low_rect = gdstk.rectangle((tx+(length-horz_width)/2, ty), (tx+(length-horz_width)/2+horz_width, ty+length), layer=28)  # TopMetal1
+            rect = gdstk.rectangle((tx-start_stub, ty+(length-vert_width)/2), (tx+block_length+end_stub, ty+(length-vert_width)/2+vert_width), layer=28)  # TopMetal1
             cell.add(rect)
 
 ##invert for easier usage
@@ -141,9 +141,9 @@ for i in range(sizeY):  # Reduced from 10
             ty = start_y*(length)
             tx = i*(length)
         
-            #low_rect = gdstk.rectangle((tx+(length-horz_width)/2, ty), (tx+(length-horz_width)/2+horz_width, ty+length), layer=126)  # TopMetal1
-            #rect = gdstk.rectangle((tx, ty+(length-vert_width)/2), (tx+block_length, ty+(length-vert_width)/2+vert_width), layer=126)  # TopMetal1
-            rect = gdstk.rectangle((tx+(length-horz_width)/2, ty-start_stub), (tx+(length-horz_width)/2+horz_width, ty+block_length+end_stub), layer=126) 
+            #low_rect = gdstk.rectangle((tx+(length-horz_width)/2, ty), (tx+(length-horz_width)/2+horz_width, ty+length), layer=28)  # TopMetal1
+            #rect = gdstk.rectangle((tx, ty+(length-vert_width)/2), (tx+block_length, ty+(length-vert_width)/2+vert_width), layer=28)  # TopMetal1
+            rect = gdstk.rectangle((tx+(length-horz_width)/2, ty-start_stub), (tx+(length-horz_width)/2+horz_width, ty+block_length+end_stub), layer=28) 
             cell.add(rect)
 
         
