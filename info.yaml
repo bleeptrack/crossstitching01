@@ -3,7 +3,7 @@ project:
   title:        "cross stitch test"      # Project title
   author:       "bleeptrack"      # Your name
   discord:      "bleeptrack"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  description:  "a cross stitch pattern generator test"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
