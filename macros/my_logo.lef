@@ -12,9 +12,4 @@ MACRO my_logo
    FOREIGN my_logo 0 0 ;
    SIZE 120.000 BY 40.000 ;
    SYMMETRY X Y ;
-   OBS
-      LAYER met4 ;
-         RECT 0.000 0.000 120.000 40.000 ;
-      END
-   END
 END my_logo

@@ -103,7 +103,7 @@ for i in range(sizeY):  # Reduced from 10
 
 # Add PR boundary (placement and routing boundary)
 # Layer 235, datatype 4 for sky130 PR boundary
-pr_boundary = gdstk.rectangle((0, 0), (sizeY*length, sizeX*length), layer=235, datatype=4)
+pr_boundary = gdstk.rectangle((0, 0), (length,length), layer=235, datatype=4)
 cell.add(pr_boundary)
 
 # active_dist = 1.5
@@ -148,14 +148,7 @@ def write_lef_file(filename, cell_name, cell_bounds, pins):
         f.write("   SYMMETRY X Y ;\n")
         
         # No pins - pure blackbox module
-        
-        # Add OBS (Obstruction) section to tell OpenLane which layers are used
-        f.write("   OBS\n")
-        f.write("      LAYER met4 ;\n")
-        f.write("         RECT {:.3f} {:.3f} {:.3f} {:.3f} ;\n".format(
-            cell_bounds[0], cell_bounds[1], cell_bounds[2], cell_bounds[3]))
-        f.write("      END\n")
-        f.write("   END\n")
+        # No OBS section needed for pure artwork on TopMetal1
         
         f.write("END {}\n".format(cell_name))
 
