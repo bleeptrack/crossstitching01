@@ -8,30 +8,30 @@
 </defs>
 <rect x="-43.3" y="-443.3" width="886.6" height="486.6" fill="#222222" stroke="none"/>
 <g id="my_logo" transform="scale(1 -1)">
-<polygon id="0x21a8110" class="l71d20" points="77,20 563,20 563,60 77,60"/>
-<polygon id="0x20251f0" class="l71d20" points="637,20 723,20 723,60 637,60"/>
-<polygon id="0x220ac00" class="l71d20" points="-3,100 403,100 403,140 -3,140"/>
-<polygon id="0x22acbd0" class="l71d20" points="557,100 803,100 803,140 557,140"/>
-<polygon id="0x20f3ad0" class="l71d20" points="-3,180 563,180 563,220 -3,220"/>
-<polygon id="0x21fbac0" class="l71d20" points="77,260 163,260 163,300 77,300"/>
-<polygon id="0x2175e60" class="l71d20" points="237,260 323,260 323,300 237,300"/>
-<polygon id="0x22dc340" class="l71d20" points="637,260 723,260 723,300 637,300"/>
-<polygon id="0x2365ce0" class="l71d20" points="77,340 163,340 163,380 77,380"/>
-<polygon id="0x22da330" class="l71d20" points="237,340 483,340 483,380 237,380"/>
-<polygon id="0x22cba20" class="l71d20" points="637,340 723,340 723,380 637,380"/>
-<polygon id="0x2358250" class="l71d20" points="20,-3 60,-3 60,83 20,83"/>
-<polygon id="0x23694a0" class="l71d20" points="20,237 60,237 60,403 20,403"/>
-<polygon id="0x238f900" class="l71d20" points="180,237 220,237 220,403 180,403"/>
-<polygon id="0x231f820" class="l71d20" points="340,237 380,237 380,323 340,323"/>
-<polygon id="0x233a280" class="l71d20" points="420,77 460,77 460,163 420,163"/>
-<polygon id="0x2352380" class="l71d20" points="420,237 460,237 460,323 420,323"/>
-<polygon id="0x226c240" class="l71d20" points="500,77 540,77 540,163 500,163"/>
-<polygon id="0x2371790" class="l71d20" points="500,237 540,237 540,403 500,403"/>
-<polygon id="0x22de200" class="l71d20" points="580,-3 620,-3 620,83 580,83"/>
-<polygon id="0x22e3900" class="l71d20" points="580,157 620,157 620,403 580,403"/>
-<polygon id="0x23256c0" class="l71d20" points="660,157 700,157 700,243 660,243"/>
-<polygon id="0x2335e30" class="l71d20" points="740,-3 780,-3 780,83 740,83"/>
-<polygon id="0x2329500" class="l71d20" points="740,157 780,157 780,403 740,403"/>
-<polygon id="0x20c4970" class="l235d4" points="0,0 80,0 80,80 0,80"/>
+<polygon id="0x1753df0" class="l71d20" points="-3,20 323,20 323,60 -3,60"/>
+<polygon id="0x1760f30" class="l71d20" points="397,20 483,20 483,60 397,60"/>
+<polygon id="0x1796e30" class="l71d20" points="557,20 643,20 643,60 557,60"/>
+<polygon id="0x15ba710" class="l71d20" points="77,100 403,100 403,140 77,140"/>
+<polygon id="0x18460d0" class="l71d20" points="477,100 803,100 803,140 477,140"/>
+<polygon id="0x18f05d0" class="l71d20" points="77,180 243,180 243,220 77,220"/>
+<polygon id="0x1869c70" class="l71d20" points="317,180 723,180 723,220 317,220"/>
+<polygon id="0x18a2f60" class="l71d20" points="-3,260 163,260 163,300 -3,300"/>
+<polygon id="0x18c3200" class="l71d20" points="237,260 403,260 403,300 237,300"/>
+<polygon id="0x18e2320" class="l71d20" points="637,260 723,260 723,300 637,300"/>
+<polygon id="0x18f3d90" class="l71d20" points="-3,340 483,340 483,380 -3,380"/>
+<polygon id="0x191a1f0" class="l71d20" points="557,340 803,340 803,380 557,380"/>
+<polygon id="0x18b8aa0" class="l71d20" points="20,77 60,77 60,243 20,243"/>
+<polygon id="0x18b6020" class="l71d20" points="180,237 220,237 220,323 180,323"/>
+<polygon id="0x17818f0" class="l71d20" points="260,157 300,157 300,243 260,243"/>
+<polygon id="0x178be20" class="l71d20" points="340,-3 380,-3 380,83 340,83"/>
+<polygon id="0x1882b20" class="l71d20" points="420,77 460,77 460,163 420,163"/>
+<polygon id="0x18492b0" class="l71d20" points="420,237 460,237 460,323 420,323"/>
+<polygon id="0x186ee30" class="l71d20" points="500,-3 540,-3 540,83 500,83"/>
+<polygon id="0x18dc450" class="l71d20" points="500,237 540,237 540,403 500,403"/>
+<polygon id="0x18fc080" class="l71d20" points="580,237 620,237 620,323 580,323"/>
+<polygon id="0x186f660" class="l71d20" points="660,-3 700,-3 700,83 660,83"/>
+<polygon id="0x18af910" class="l71d20" points="740,-3 780,-3 780,83 740,83"/>
+<polygon id="0x164d330" class="l71d20" points="740,157 780,157 780,323 740,323"/>
+<polygon id="0x16f5d30" class="l235d4" points="0,0 80,0 80,80 0,80"/>
 </g>
 </svg>

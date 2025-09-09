@@ -140,18 +140,6 @@ def write_lef_file(filename, cell_name, cell_bounds, pins):
         f.write("   DATABASE MICRONS 1000 ;\n")
         f.write("END UNITS\n\n")
         
-        # Add layer definitions
-        f.write("LAYER met4\n")
-        f.write("   TYPE ROUTING ;\n")
-        f.write("   DIRECTION HORIZONTAL ;\n")
-        f.write("   PITCH 0.46 ;\n")
-        f.write("   WIDTH 0.14 ;\n")
-        f.write("   SPACING 0.14 ;\n")
-        f.write("   RESISTANCE RPERSQ 0.0008 ;\n")
-        f.write("   CAPACITANCE CPERSQDIST 0.00017 ;\n")
-        f.write("   THICKNESS 0.14 ;\n")
-        f.write("END met4\n\n")
-        
         # Define the cell
         f.write("MACRO {}\n".format(cell_name))
         f.write("   CLASS BLOCK ;\n")
@@ -160,14 +148,7 @@ def write_lef_file(filename, cell_name, cell_bounds, pins):
         f.write("   SYMMETRY X Y ;\n")
         
         # No pins - pure blackbox module
-        
-        # Add OBS (Obstruction) section to tell OpenLane which layers are used
-        f.write("   OBS\n")
-        f.write("      LAYER met4 ;\n")
-        f.write("         RECT {:.3f} {:.3f} {:.3f} {:.3f} ;\n".format(
-            cell_bounds[0], cell_bounds[1], cell_bounds[2], cell_bounds[3]))
-        f.write("      END\n")
-        f.write("   END\n")
+        # No OBS section - keep LEF simple
         
         f.write("END {}\n".format(cell_name))
 
