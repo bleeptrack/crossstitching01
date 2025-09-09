@@ -148,7 +148,14 @@ def write_lef_file(filename, cell_name, cell_bounds, pins):
         f.write("   SYMMETRY X Y ;\n")
         
         # No pins - pure blackbox module
-        # No OBS section needed for pure artwork on TopMetal1
+        
+        # Add OBS (Obstruction) section to tell OpenLane which layers are used
+        f.write("   OBS\n")
+        f.write("      LAYER met4 ;\n")
+        f.write("         RECT {:.3f} {:.3f} {:.3f} {:.3f} ;\n".format(
+            cell_bounds[0], cell_bounds[1], cell_bounds[2], cell_bounds[3]))
+        f.write("      END\n")
+        f.write("   END\n")
         
         f.write("END {}\n".format(cell_name))
 
