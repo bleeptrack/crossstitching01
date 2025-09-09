@@ -1,44 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="886.6" height="486.6" viewBox="-43.3 -443.3 886.6 486.6">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="886.6" height="886.6" viewBox="-43.3 -843.3 886.6 886.6">
 <defs>
 <style type="text/css">
 .l235d4 {stroke: #0067A5; fill: #0067A5; fill-opacity: 0.5;}
 .l71d20 {stroke: #B3446C; fill: #B3446C; fill-opacity: 0.5;}
 </style>
 </defs>
-<rect x="-43.3" y="-443.3" width="886.6" height="486.6" fill="#222222" stroke="none"/>
+<rect x="-43.3" y="-843.3" width="886.6" height="886.6" fill="#222222" stroke="none"/>
 <g id="my_logo" transform="scale(1 -1)">
-<polygon id="0xdb4030" class="l71d20" points="157,20 403,20 403,60 157,60"/>
-<polygon id="0xcd3040" class="l71d20" points="557,20 643,20 643,60 557,60"/>
-<polygon id="0xbd82a0" class="l71d20" points="717,20 803,20 803,60 717,60"/>
-<polygon id="0xc9ca70" class="l71d20" points="-3,100 83,100 83,140 -3,140"/>
-<polygon id="0xdafb20" class="l71d20" points="157,100 243,100 243,140 157,140"/>
-<polygon id="0xd1ef00" class="l71d20" points="397,100 483,100 483,140 397,140"/>
-<polygon id="0xd0c8d0" class="l71d20" points="557,100 723,100 723,140 557,140"/>
-<polygon id="0xd51150" class="l71d20" points="157,180 243,180 243,220 157,220"/>
-<polygon id="0xf1b060" class="l71d20" points="477,180 563,180 563,220 477,220"/>
-<polygon id="0xf0f570" class="l71d20" points="637,180 723,180 723,220 637,220"/>
-<polygon id="0xecb0d0" class="l71d20" points="-3,260 83,260 83,300 -3,300"/>
-<polygon id="0xe86fd0" class="l71d20" points="157,260 403,260 403,300 157,300"/>
-<polygon id="0xe64a70" class="l71d20" points="717,260 803,260 803,300 717,300"/>
-<polygon id="0xe2fef0" class="l71d20" points="-3,340 323,340 323,380 -3,380"/>
-<polygon id="0xeee3a0" class="l71d20" points="397,340 483,340 483,380 397,380"/>
-<polygon id="0xf12ae0" class="l71d20" points="557,340 643,340 643,380 557,380"/>
-<polygon id="0xf39190" class="l71d20" points="717,340 803,340 803,380 717,380"/>
-<polygon id="0xea5960" class="l71d20" points="20,-3 60,-3 60,83 20,83"/>
-<polygon id="0xef81e0" class="l71d20" points="20,157 60,157 60,243 20,243"/>
-<polygon id="0xed99e0" class="l71d20" points="100,-3 140,-3 140,323 100,323"/>
-<polygon id="0xed5010" class="l71d20" points="260,77 300,77 300,243 260,243"/>
-<polygon id="0xefea60" class="l71d20" points="340,77 380,77 380,243 340,243"/>
-<polygon id="0xe8db50" class="l71d20" points="340,317 380,317 380,403 340,403"/>
-<polygon id="0xecebc0" class="l71d20" points="420,-3 460,-3 460,83 420,83"/>
-<polygon id="0xed3ef0" class="l71d20" points="420,157 460,157 460,323 420,323"/>
-<polygon id="0xc6b1d0" class="l71d20" points="500,-3 540,-3 540,163 500,163"/>
-<polygon id="0xe3eb80" class="l71d20" points="500,237 540,237 540,403 500,403"/>
-<polygon id="0xe9f060" class="l71d20" points="580,157 620,157 620,323 580,323"/>
-<polygon id="0xe92c40" class="l71d20" points="660,-3 700,-3 700,83 660,83"/>
-<polygon id="0xceb350" class="l71d20" points="660,237 700,237 700,403 660,403"/>
-<polygon id="0xd170a0" class="l71d20" points="740,77 780,77 780,243 740,243"/>
-<polygon id="0xd206e0" class="l235d4" points="0,0 80,0 80,80 0,80"/>
+<polygon id="0x182b390" class="l71d20" points="-3,20 83,20 83,60 -3,60"/>
+<polygon id="0x1821260" class="l71d20" points="557,20 643,20 643,60 557,60"/>
+<polygon id="0x1841300" class="l71d20" points="-3,100 163,100 163,140 -3,140"/>
+<polygon id="0x184e440" class="l71d20" points="317,100 483,100 483,140 317,140"/>
+<polygon id="0x1933620" class="l71d20" points="557,100 643,100 643,140 557,140"/>
+<polygon id="0x19ddcd0" class="l71d20" points="77,180 163,180 163,220 77,220"/>
+<polygon id="0x19571c0" class="l71d20" points="237,180 563,180 563,220 237,220"/>
+<polygon id="0x19904b0" class="l71d20" points="637,180 723,180 723,220 637,220"/>
+<polygon id="0x19bd400" class="l71d20" points="-3,260 83,260 83,300 -3,300"/>
+<polygon id="0x19cefd0" class="l71d20" points="317,260 403,260 403,300 317,300"/>
+<polygon id="0x1a088b0" class="l71d20" points="557,260 643,260 643,300 557,300"/>
+<polygon id="0x198b4a0" class="l71d20" points="-3,340 83,340 83,380 -3,380"/>
+<polygon id="0x1879330" class="l71d20" points="237,340 403,340 403,380 237,380"/>
+<polygon id="0x18d4b80" class="l71d20" points="637,340 803,340 803,380 637,380"/>
+<polygon id="0x1998570" class="l71d20" points="-3,420 163,420 163,460 -3,460"/>
+<polygon id="0x195c380" class="l71d20" points="237,420 323,420 323,460 237,460"/>
+<polygon id="0x19ca650" class="l71d20" points="397,420 483,420 483,460 397,460"/>
+<polygon id="0x17a3190" class="l71d20" points="557,420 643,420 643,460 557,460"/>
+<polygon id="0x19e9780" class="l71d20" points="-3,500 163,500 163,540 -3,540"/>
+<polygon id="0x195cbb0" class="l71d20" points="477,500 563,500 563,540 477,540"/>
+<polygon id="0x199f170" class="l71d20" points="637,500 803,500 803,540 637,540"/>
+<polygon id="0x19a15d0" class="l71d20" points="157,580 723,580 723,620 157,620"/>
+<polygon id="0x173b340" class="l71d20" points="-3,660 483,660 483,700 -3,700"/>
+<polygon id="0x17e31d0" class="l71d20" points="557,660 803,660 803,700 557,700"/>
+<polygon id="0x17dc9e0" class="l71d20" points="397,740 483,740 483,780 397,780"/>
+<polygon id="0x1863280" class="l71d20" points="557,740 643,740 643,780 557,780"/>
+<polygon id="0x176bc80" class="l71d20" points="20,157 60,157 60,243 20,243"/>
+<polygon id="0x196d880" class="l71d20" points="20,557 60,557 60,643 20,643"/>
+<polygon id="0x17bb4c0" class="l71d20" points="20,717 60,717 60,803 20,803"/>
+<polygon id="0x1820e40" class="l71d20" points="100,-3 140,-3 140,83 100,83"/>
+<polygon id="0x1843f50" class="l71d20" points="100,237 140,237 140,403 100,403"/>
+<polygon id="0x186d2a0" class="l71d20" points="100,557 140,557 140,643 100,643"/>
+<polygon id="0x1976520" class="l71d20" points="100,717 140,717 140,803 100,803"/>
+<polygon id="0x1a00140" class="l71d20" points="180,-3 220,-3 220,563 180,563"/>
+<polygon id="0x1a00200" class="l71d20" points="180,717 220,717 220,803 180,803"/>
+<polygon id="0x1a002c0" class="l71d20" points="260,-3 300,-3 300,163 260,163"/>
+<polygon id="0x1a00380" class="l71d20" points="260,237 300,237 300,323 260,323"/>
+<polygon id="0x1a00440" class="l71d20" points="260,477 300,477 300,563 260,563"/>
+<polygon id="0x1a00500" class="l71d20" points="260,717 300,717 300,803 260,803"/>
+<polygon id="0x1a005c0" class="l71d20" points="340,-3 380,-3 380,83 340,83"/>
+<polygon id="0x1a00680" class="l71d20" points="340,397 380,397 380,563 340,563"/>
+<polygon id="0x1a00740" class="l71d20" points="340,717 380,717 380,803 340,803"/>
+<polygon id="0x1a00800" class="l71d20" points="420,-3 460,-3 460,83 420,83"/>
+<polygon id="0x1a008c0" class="l71d20" points="420,237 460,237 460,403 420,403"/>
+<polygon id="0x1a00980" class="l71d20" points="420,477 460,477 460,563 420,563"/>
+<polygon id="0x1a00a40" class="l71d20" points="500,-3 540,-3 540,163 500,163"/>
+<polygon id="0x1a00b00" class="l71d20" points="500,237 540,237 540,483 500,483"/>
+<polygon id="0x1a00bc0" class="l71d20" points="500,637 540,637 540,803 500,803"/>
+<polygon id="0x1a00c80" class="l71d20" points="580,157 620,157 620,243 580,243"/>
+<polygon id="0x1a00d40" class="l71d20" points="580,317 620,317 620,403 580,403"/>
+<polygon id="0x1a00e00" class="l71d20" points="580,477 620,477 620,563 580,563"/>
+<polygon id="0x1a00ec0" class="l71d20" points="660,-3 700,-3 700,163 660,163"/>
+<polygon id="0x1a00f80" class="l71d20" points="660,237 700,237 700,323 660,323"/>
+<polygon id="0x1a01040" class="l71d20" points="660,397 700,397 700,483 660,483"/>
+<polygon id="0x1a01100" class="l71d20" points="660,717 700,717 700,803 660,803"/>
+<polygon id="0x1a011c0" class="l71d20" points="740,-3 780,-3 780,323 740,323"/>
+<polygon id="0x1a01280" class="l71d20" points="740,397 780,397 780,483 740,483"/>
+<polygon id="0x1a01340" class="l71d20" points="740,557 780,557 780,643 740,643"/>
+<polygon id="0x1a01400" class="l71d20" points="740,717 780,717 780,803 740,803"/>
+<polygon id="0x1a014c0" class="l235d4" points="0,0 80,0 80,80 0,80"/>
 </g>
 </svg>
