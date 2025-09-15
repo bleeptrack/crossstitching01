@@ -50,9 +50,9 @@ def create_mirrored_structure(sizeX, sizeY):
     
     return structure
 
-# Create 4 structures for 2x2 grid
+# Create 6 structures for 3x2 grid
 structures = []
-for i in range(4):
+for i in range(6):
     structures.append(create_mirrored_structure(sizeX, sizeY))
 
 
@@ -63,13 +63,14 @@ lib = gdstk.Library()
 # Geometry must be placed in cells.
 cell = lib.new_cell("my_logo")
 
-# Create 2x2 grid of structures with padding
-padding = length * 0.5  # Padding between structures
-grid_size = 2  # 2x2 grid
+# Create 3x2 grid of structures with padding
+padding = length * 1.0  # Padding between structures
+grid_size_x = 3  # 3 in x direction
+grid_size_y = 2  # 2 in y direction
 
-for grid_x in range(grid_size):
-    for grid_y in range(grid_size):
-        structure_index = grid_x * grid_size + grid_y
+for grid_x in range(grid_size_x):
+    for grid_y in range(grid_size_y):
+        structure_index = grid_x * grid_size_y + grid_y
         structure = structures[structure_index]
         
         # Calculate offset for this grid position
@@ -159,9 +160,9 @@ def write_lef_file(filename, cell_name, cell_bounds, pins):
         
         f.write("END {}\n".format(cell_name))
 
-# Calculate cell bounds for 2x2 grid layout
-total_width = grid_size * sizeY * length + (grid_size - 1) * padding
-total_height = grid_size * sizeX * length + (grid_size - 1) * padding
+# Calculate cell bounds for 3x2 grid layout
+total_width = grid_size_x * sizeY * length + (grid_size_x - 1) * padding
+total_height = grid_size_y * sizeX * length + (grid_size_y - 1) * padding
 cell_bounds = (0, 0, total_width, total_height)
 
 # Write LEF file
