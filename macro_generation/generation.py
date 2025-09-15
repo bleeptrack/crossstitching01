@@ -19,32 +19,41 @@ y_width = [4] * sizeY
 
 
 
-# Create structure with mirrored quarters
-structure = [[0 for _ in range(sizeY)] for _ in range(sizeX)]
+# Create 4 separate structure arrays for 2x2 grid
+def create_mirrored_structure(sizeX, sizeY):
+    """Create a single mirrored structure array"""
+    structure = [[0 for _ in range(sizeY)] for _ in range(sizeX)]
+    
+    # Calculate quarter dimensions
+    quarter_x = sizeX // 2
+    quarter_y = sizeY // 2
+    
+    # Randomly fill the top-left quarter
+    for x in range(quarter_x):
+        for y in range(quarter_y):
+            structure[x][y] = random.randint(0, 1)
+    
+    # Mirror to top-right quarter (horizontal mirror)
+    for x in range(quarter_x):
+        for y in range(quarter_y, sizeY):
+            structure[x][y] = structure[x][sizeY - 1 - y]
+    
+    # Mirror to bottom-left quarter (vertical mirror)
+    for x in range(quarter_x, sizeX):
+        for y in range(quarter_y):
+            structure[x][y] = structure[sizeX - 1 - x][y]
+    
+    # Mirror to bottom-right quarter (both horizontal and vertical mirror)
+    for x in range(quarter_x, sizeX):
+        for y in range(quarter_y, sizeY):
+            structure[x][y] = structure[sizeX - 1 - x][sizeY - 1 - y]
+    
+    return structure
 
-# Calculate quarter dimensions
-quarter_x = sizeX // 2
-quarter_y = sizeY // 2
-
-# Randomly fill the top-left quarter
-for x in range(quarter_x):
-    for y in range(quarter_y):
-        structure[x][y] = random.randint(0, 1)
-
-# Mirror to top-right quarter (horizontal mirror)
-for x in range(quarter_x):
-    for y in range(quarter_y, sizeY):
-        structure[x][y] = structure[x][sizeY - 1 - y]
-
-# Mirror to bottom-left quarter (vertical mirror)
-for x in range(quarter_x, sizeX):
-    for y in range(quarter_y):
-        structure[x][y] = structure[sizeX - 1 - x][y]
-
-# Mirror to bottom-right quarter (both horizontal and vertical mirror)
-for x in range(quarter_x, sizeX):
-    for y in range(quarter_y, sizeY):
-        structure[x][y] = structure[sizeX - 1 - x][sizeY - 1 - y]
+# Create 4 structures for 2x2 grid
+structures = []
+for i in range(4):
+    structures.append(create_mirrored_structure(sizeX, sizeY))
 
 
 
@@ -54,30 +63,48 @@ lib = gdstk.Library()
 # Geometry must be placed in cells.
 cell = lib.new_cell("my_logo")
 
-for x in range(sizeX):
-    for y in range(sizeY):
-        if structure[x][y] == 1:
-            # Create main rectangle
-            rect = gdstk.rectangle((x*length+gap, y*length+gap), (x*length+length-gap, y*length+length-gap), layer=71, datatype=20)
-            
-            # Create four small rectangles to subtract from center of each side
-            cutout_size = gap*1.7
-            center_x = x*length + length/2
-            center_y = y*length + length/2
-            
-            # Top side cutout
-            top_cutout = gdstk.rectangle((center_x - cutout_size/2, y*length+gap), (center_x + cutout_size/2, y*length+gap+cutout_size), layer=71, datatype=20)
-            # Bottom side cutout  
-            bottom_cutout = gdstk.rectangle((center_x - cutout_size/2, y*length+length-gap-cutout_size), (center_x + cutout_size/2, y*length+length-gap), layer=71, datatype=20)
-            # Left side cutout
-            left_cutout = gdstk.rectangle((x*length+gap, center_y - cutout_size/2), (x*length+gap+cutout_size, center_y + cutout_size/2), layer=71, datatype=20)
-            # Right side cutout
-            right_cutout = gdstk.rectangle((x*length+length-gap-cutout_size, center_y - cutout_size/2), (x*length+length-gap, center_y + cutout_size/2), layer=71, datatype=20)
-            
-            # Subtract the side cutouts to create cross shape
-            cross_shape = gdstk.boolean(rect, [top_cutout, bottom_cutout, left_cutout, right_cutout], 'not', layer=71, datatype=20)
-            for shape in cross_shape:
-                cell.add(shape)
+# Create 2x2 grid of structures with padding
+padding = length * 0.5  # Padding between structures
+grid_size = 2  # 2x2 grid
+
+for grid_x in range(grid_size):
+    for grid_y in range(grid_size):
+        structure_index = grid_x * grid_size + grid_y
+        structure = structures[structure_index]
+        
+        # Calculate offset for this grid position
+        offset_x = grid_x * (sizeX * length + padding)
+        offset_y = grid_y * (sizeY * length + padding)
+        
+        # Generate pattern for this structure
+        for x in range(sizeX):
+            for y in range(sizeY):
+                if structure[x][y] == 1:
+                    # Create main rectangle with grid offset
+                    rect = gdstk.rectangle(
+                        (offset_x + x*length+gap, offset_y + y*length+gap), 
+                        (offset_x + x*length+length-gap, offset_y + y*length+length-gap), 
+                        layer=71, datatype=20
+                    )
+                    
+                    # Create four small rectangles to subtract from center of each side
+                    cutout_size = gap*1.7
+                    center_x = offset_x + x*length + length/2
+                    center_y = offset_y + y*length + length/2
+                    
+                    # Top side cutout
+                    top_cutout = gdstk.rectangle((center_x - cutout_size/2, offset_y + y*length+gap), (center_x + cutout_size/2, offset_y + y*length+gap+cutout_size), layer=71, datatype=20)
+                    # Bottom side cutout  
+                    bottom_cutout = gdstk.rectangle((center_x - cutout_size/2, offset_y + y*length+length-gap-cutout_size), (center_x + cutout_size/2, offset_y + y*length+length-gap), layer=71, datatype=20)
+                    # Left side cutout
+                    left_cutout = gdstk.rectangle((offset_x + x*length+gap, center_y - cutout_size/2), (offset_x + x*length+gap+cutout_size, center_y + cutout_size/2), layer=71, datatype=20)
+                    # Right side cutout
+                    right_cutout = gdstk.rectangle((offset_x + x*length+length-gap-cutout_size, center_y - cutout_size/2), (offset_x + x*length+length-gap, center_y + cutout_size/2), layer=71, datatype=20)
+                    
+                    # Subtract the side cutouts to create cross shape
+                    cross_shape = gdstk.boolean(rect, [top_cutout, bottom_cutout, left_cutout, right_cutout], 'not', layer=71, datatype=20)
+                    for shape in cross_shape:
+                        cell.add(shape)
         
 
 
@@ -132,10 +159,10 @@ def write_lef_file(filename, cell_name, cell_bounds, pins):
         
         f.write("END {}\n".format(cell_name))
 
-# Calculate cell bounds (back to original size)
-cell_width = sizeY*length  # 32 microns
-cell_height = sizeX*length  # 32 microns
-cell_bounds = (0, 0, cell_width, cell_height)
+# Calculate cell bounds for 2x2 grid layout
+total_width = grid_size * sizeY * length + (grid_size - 1) * padding
+total_height = grid_size * sizeX * length + (grid_size - 1) * padding
+cell_bounds = (0, 0, total_width, total_height)
 
 # Write LEF file
 write_lef_file("../macros/my_logo.lef", "my_logo", cell_bounds, [])
