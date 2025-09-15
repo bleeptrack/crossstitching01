@@ -57,8 +57,27 @@ cell = lib.new_cell("my_logo")
 for x in range(sizeX):
     for y in range(sizeY):
         if structure[x][y] == 1:
+            # Create main rectangle
             rect = gdstk.rectangle((x*length+gap, y*length+gap), (x*length+length-gap, y*length+length-gap), layer=71, datatype=20)
-            cell.add(rect)
+            
+            # Create four small rectangles to subtract from center of each side
+            cutout_size = gap*1.7
+            center_x = x*length + length/2
+            center_y = y*length + length/2
+            
+            # Top side cutout
+            top_cutout = gdstk.rectangle((center_x - cutout_size/2, y*length+gap), (center_x + cutout_size/2, y*length+gap+cutout_size), layer=71, datatype=20)
+            # Bottom side cutout  
+            bottom_cutout = gdstk.rectangle((center_x - cutout_size/2, y*length+length-gap-cutout_size), (center_x + cutout_size/2, y*length+length-gap), layer=71, datatype=20)
+            # Left side cutout
+            left_cutout = gdstk.rectangle((x*length+gap, center_y - cutout_size/2), (x*length+gap+cutout_size, center_y + cutout_size/2), layer=71, datatype=20)
+            # Right side cutout
+            right_cutout = gdstk.rectangle((x*length+length-gap-cutout_size, center_y - cutout_size/2), (x*length+length-gap, center_y + cutout_size/2), layer=71, datatype=20)
+            
+            # Subtract the side cutouts to create cross shape
+            cross_shape = gdstk.boolean(rect, [top_cutout, bottom_cutout, left_cutout, right_cutout], 'not', layer=71, datatype=20)
+            for shape in cross_shape:
+                cell.add(shape)
         
 
 
