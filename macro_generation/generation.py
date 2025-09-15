@@ -8,7 +8,7 @@ factor = 2
 
 length = 8 / factor  # Reduced from 8
 avg_width = 2 / factor # Reduced from 3
-gap = 0.3  # Reduced from 1
+gap = 0.5  # Reduced from 1
 
 sizeX = 4 * factor #13
 sizeY = 4 * factor #10
@@ -57,17 +57,8 @@ cell = lib.new_cell("my_logo")
 for x in range(sizeX):
     for y in range(sizeY):
         if structure[x][y] == 1:
-            
-            stitch = gdstk.rectangle((x*length+gap, y*length+length/2-avg_width/2), (x*length+length-gap, y*length+length/2+avg_width/2), layer=71, datatype=20)
-            #stitch2 = stitch.copy()
-            stitch.rotate(math.radians(45), center=(x*length+length/2, y*length+length/2))
-            #stitch2.rotate(-math.radians(45), center=(x*length+length/2, y*length+length/2))
-            cell.add(stitch)
-            
-            #combined = gdstk.boolean(stitch, stitch2, 'or', layer=71, datatype=20)
-            #for c in combined:
-                #c.fillet(avg_width/4)
-            #    cell.add(c)
+            rect = gdstk.rectangle((x*length+gap, y*length+gap), (x*length+length-gap, y*length+length-gap), layer=71, datatype=20)
+            cell.add(rect)
         
 
 
