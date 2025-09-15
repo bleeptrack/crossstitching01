@@ -4,7 +4,7 @@ import math
 min_metal6_width = 1.7 #1.64  # Minimum Metal6 width in microns
 min_metal6_spacing = 1.7 #1.64 
 
-factor = 1
+factor = 2
 
 length = 8 / factor  # Reduced from 8
 avg_width = 2 / factor # Reduced from 3
