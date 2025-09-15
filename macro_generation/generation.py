@@ -115,13 +115,13 @@ pr_boundary = gdstk.rectangle((0, 0), (length,length), layer=235, datatype=4)
 cell.add(pr_boundary)
 
 # SkyWater fill pattern parameters
-active_dist = 1.8  # Slightly increased to ensure compliance
+active_dist = 2.5  # Significantly increased to ensure nwell.2a compliance
 active_size = 3.0 
 overhang = 0.18
 
 # Add substrate fill patterns for SkyWater PDK
-for i in range(20):  # Reduced range to avoid edge effects
-    for j in range(12):  # Reduced range to avoid edge effects
+for i in range(18):  # Reduced range due to increased spacing
+    for j in range(10):  # Reduced range due to increased spacing
         tx = i * (active_size + active_dist)
         ty = j * (active_size + active_dist)
 
