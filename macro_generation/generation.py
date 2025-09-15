@@ -115,22 +115,22 @@ pr_boundary = gdstk.rectangle((0, 0), (length,length), layer=235, datatype=4)
 cell.add(pr_boundary)
 
 # SkyWater fill pattern parameters - using dummy fill layers
-fill_dist = 2.0  # Spacing between fill elements
-fill_size = 1.0  # Size of fill elements
+#fill_dist = 2.0  # Spacing between fill elements
+#fill_size = 1.0  # Size of fill elements
 
 # Add dummy fill patterns for SkyWater PDK - these are non-functional
-for i in range(35):  # Cover the design area
-    for j in range(23):  # Cover the design area
-        tx = i * (fill_size + fill_dist)
-        ty = j * (fill_size + fill_dist)
+#for i in range(35):  # Cover the design area
+#    for j in range(23):  # Cover the design area
+#        tx = i * (fill_size + fill_dist)
+#        ty = j * (fill_size + fill_dist)#
 
-        # Dummy fill on metal1 layer (layer 68) with datatype 0 for standard metal
-        metal1_fill = gdstk.rectangle((tx, ty), (tx+fill_size, ty+fill_size), layer=68, datatype=0)
-        cell.add(metal1_fill)
+#        # Dummy fill on metal1 layer (layer 68) with datatype 0 for standard metal
+#        metal1_fill = gdstk.rectangle((tx, ty), (tx+fill_size, ty+fill_size), layer=68, datatype=0)
+#        cell.add(metal1_fill)
        
-        # Dummy fill on metal2 layer (layer 69) with datatype 0 for standard metal
-        metal2_fill = gdstk.rectangle((tx, ty), (tx+fill_size, ty+fill_size), layer=69, datatype=0)
-        cell.add(metal2_fill)
+#        # Dummy fill on metal2 layer (layer 69) with datatype 0 for standard metal
+#        metal2_fill = gdstk.rectangle((tx, ty), (tx+fill_size, ty+fill_size), layer=69, datatype=0)
+#        cell.add(metal2_fill)
 
         
 
