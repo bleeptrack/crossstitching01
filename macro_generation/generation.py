@@ -114,24 +114,23 @@ for grid_x in range(grid_size_x):
 pr_boundary = gdstk.rectangle((0, 0), (length,length), layer=235, datatype=4)
 cell.add(pr_boundary)
 
-# SkyWater fill pattern parameters
-active_dist = 2.5  # Significantly increased to ensure nwell.2a compliance
-active_size = 3.0 
-overhang = 0.18
+# SkyWater fill pattern parameters - using dummy fill layers
+fill_dist = 2.0  # Spacing between fill elements
+fill_size = 1.0  # Size of fill elements
 
-# Add substrate fill patterns for SkyWater PDK
-for i in range(18):  # Reduced range due to increased spacing
-    for j in range(10):  # Reduced range due to increased spacing
-        tx = i * (active_size + active_dist)
-        ty = j * (active_size + active_dist)
+# Add dummy fill patterns for SkyWater PDK - these are non-functional
+for i in range(35):  # Cover the design area
+    for j in range(23):  # Cover the design area
+        tx = i * (fill_size + fill_dist)
+        ty = j * (fill_size + fill_dist)
 
-        # N+ active region (substrate tap) - SkyWater layer 65, datatype 20
-        nplus_rect = gdstk.rectangle((tx, ty), (tx+active_size, ty+active_size), layer=65, datatype=20)
-        cell.add(nplus_rect)
+        # Dummy fill on metal1 layer (layer 68) with datatype 0 for standard metal
+        metal1_fill = gdstk.rectangle((tx, ty), (tx+fill_size, ty+fill_size), layer=68, datatype=0)
+        cell.add(metal1_fill)
        
-        # P+ active region (well tap) - SkyWater layer 66, datatype 20  
-        pplus_rect = gdstk.rectangle((tx-overhang, ty-overhang), (tx+active_size+overhang, ty+active_size+overhang), layer=66, datatype=20)
-        cell.add(pplus_rect)
+        # Dummy fill on metal2 layer (layer 69) with datatype 0 for standard metal
+        metal2_fill = gdstk.rectangle((tx, ty), (tx+fill_size, ty+fill_size), layer=69, datatype=0)
+        cell.add(metal2_fill)
 
         
 
