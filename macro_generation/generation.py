@@ -4,13 +4,14 @@ import math
 min_metal6_width = 1.7 #1.64  # Minimum Metal6 width in microns
 min_metal6_spacing = 1.7 #1.64 
 
+factor = 1
 
-length = 8  # Reduced from 8
-avg_width = 2  # Reduced from 3
+length = 8 / factor  # Reduced from 8
+avg_width = 2 / factor # Reduced from 3
 gap = 1  # Reduced from 1
 
-sizeX = 13
-sizeY = 10
+sizeX = 4 * factor #13
+sizeY = 4 * factor #10
 
 
 x_width = [4] * sizeX
@@ -18,7 +19,32 @@ y_width = [4] * sizeY
 
 
 
-structure = [[random.randint(0, 1) for _ in range(sizeY)] for _ in range(sizeX)]
+# Create structure with mirrored quarters
+structure = [[0 for _ in range(sizeY)] for _ in range(sizeX)]
+
+# Calculate quarter dimensions
+quarter_x = sizeX // 2
+quarter_y = sizeY // 2
+
+# Randomly fill the top-left quarter
+for x in range(quarter_x):
+    for y in range(quarter_y):
+        structure[x][y] = random.randint(0, 1)
+
+# Mirror to top-right quarter (horizontal mirror)
+for x in range(quarter_x):
+    for y in range(quarter_y, sizeY):
+        structure[x][y] = structure[x][sizeY - 1 - y]
+
+# Mirror to bottom-left quarter (vertical mirror)
+for x in range(quarter_x, sizeX):
+    for y in range(quarter_y):
+        structure[x][y] = structure[sizeX - 1 - x][y]
+
+# Mirror to bottom-right quarter (both horizontal and vertical mirror)
+for x in range(quarter_x, sizeX):
+    for y in range(quarter_y, sizeY):
+        structure[x][y] = structure[sizeX - 1 - x][sizeY - 1 - y]
 
 
 
@@ -40,7 +66,7 @@ for x in range(sizeX):
             
             combined = gdstk.boolean(stitch, stitch2, 'or', layer=1, datatype=22)
             for c in combined:
-                c.fillet(0.8)
+                c.fillet(avg_width/4)
                 cell.add(c)
         
 
