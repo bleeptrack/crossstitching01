@@ -60,13 +60,13 @@ for x in range(sizeX):
             
             stitch = gdstk.rectangle((x*length, y*length+length/2-avg_width/2), (x*length+length, y*length+length/2+avg_width/2), layer=71, datatype=20)
             stitch2 = stitch.copy()
-            stitch.rotate(45, center=(x*length+length/2, y*length+length/2))
-            stitch2.rotate(-45, center=(x*length+length/2, y*length+length/2))
+            stitch.rotate(math.radians(45), center=(x*length+length/2, y*length+length/2))
+            stitch2.rotate(-math.radians(45), center=(x*length+length/2, y*length+length/2))
 
             
             combined = gdstk.boolean(stitch, stitch2, 'or', layer=71, datatype=20)
             for c in combined:
-                c.fillet(avg_width/4)
+                #c.fillet(avg_width/4)
                 cell.add(c)
         
 
