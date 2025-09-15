@@ -6,11 +6,11 @@ min_metal6_spacing = 1.7 #1.64
 
 
 length = 8  # Reduced from 8
-avg_width = 4  # Reduced from 3
+avg_width = 2  # Reduced from 3
 gap = 1  # Reduced from 1
 
-sizeX = 10
-sizeY = 13
+sizeX = 13
+sizeY = 10
 
 
 x_width = [4] * sizeX
@@ -28,76 +28,20 @@ lib = gdstk.Library()
 # Geometry must be placed in cells.
 cell = lib.new_cell("my_logo")
 
-# Increase the grid size to create more TopMetal1 coverage
-for i in range(sizeX):  # Reduced from 10
-    start_x = 0
-    start_stub = (length-y_width[0]) /2 - min_metal6_spacing
-    print("start_stub", start_stub, (length-y_width[0]) /2 - min_metal6_spacing)
-  
-    for j in range(sizeY):  # Reduced from 10
-        if j>0 and structure[i][j] == 1 and structure[i][j-1] == 0: 
-            start_x = j
-            start_stub = (length-y_width[j]) /2 - min_metal6_spacing
+for x in range(sizeX):
+    for y in range(sizeY):
+        if structure[x][y] == 1:
             
+            stitch = gdstk.rectangle((x*length, y*length+length/2-avg_width/2), (x*length+length, y*length+length/2+avg_width/2), layer=1, datatype=22)
+            stitch2 = stitch.copy()
+            stitch.rotate(45, center=(x*length+length/2, y*length+length/2))
+            stitch2.rotate(-45, center=(x*length+length/2, y*length+length/2))
 
-        if j>0 and structure[i][j] == 0 and structure[i][j-1] == 1 or j==len(structure[i])-1 and structure[i][j] == 1:
-            end_x = j-1
-            end_stub = (length-y_width[j-1]) /2 - min_metal6_spacing
-            if j==len(structure[i])-1 and structure[i][j] == 1:
-                end_x = j
-                end_stub = (length-y_width[j]) /2 - min_metal6_spacing
-
-          
-            vert_width = y_width[j]
             
-            block_length = length * (end_x-start_x+1)
-           
-
-            # Create the geometry (a single rectangle) and add it to the cell.
-            tx = start_x*(length)
-            ty = i*(length)
-        
-            #low_rect = gdstk.rectangle((tx+(length-horz_width)/2, ty), (tx+(length-horz_width)/2+horz_width, ty+length), layer=71, datatype=20)  # Metal4
-            rect = gdstk.rectangle((tx-start_stub, ty+(length-vert_width)/2), (tx+block_length+end_stub, ty+(length-vert_width)/2+vert_width), layer=71, datatype=20)  # Metal4
-            cell.add(rect)
-
-##invert for easier usage
-structure = [[1 - cell for cell in row] for row in structure]
-
-
-# Increase the grid size to create more TopMetal1 coverage
-for i in range(sizeY):  # Reduced from 10
-    start_y = 0
-    start_stub = (length-x_width[0]) /2 - min_metal6_spacing
-  
-    for j in range(sizeX):  # Reduced from 10
-        #print("j", j, "i", i, structure[j][i])
-        if j>0 and structure[j][i] == 1 and structure[j-1][i] == 0: 
-            start_y = j
-            start_stub = (length-x_width[j]) /2 - min_metal6_spacing
-
-        if j>0 and structure[j][i] == 0 and structure[j-1][i] == 1 or j==len(structure)-1 and structure[j][i] == 1:
-            end_y = j-1
-            if j==len(structure)-1 and structure[j][i] == 1:
-                end_y = j
-                end_stub = (length-x_width[j]) /2 - min_metal6_spacing
-        
-            horz_width = x_width[j]
-            
-            block_length = length * (end_y-start_y+1)
-            
-
-            # Create the geometry (a single rectangle) and add it to the cell.
-            ty = start_y*(length)
-            tx = i*(length)
-        
-            #low_rect = gdstk.rectangle((tx+(length-horz_width)/2, ty), (tx+(length-horz_width)/2+horz_width, ty+length), layer=71, datatype=20)  # Metal4
-            #rect = gdstk.rectangle((tx, ty+(length-vert_width)/2), (tx+block_length, ty+(length-vert_width)/2+vert_width), layer=71, datatype=20)  # Metal4
-            rect = gdstk.rectangle((tx+(length-horz_width)/2, ty-start_stub), (tx+(length-horz_width)/2+horz_width, ty+block_length+end_stub), layer=71, datatype=20) 
-            cell.add(rect)
-
-        
-            
+            combined = gdstk.boolean(stitch, stitch2, 'or', layer=1, datatype=22)
+            for c in combined:
+                c.fillet(0.8)
+                cell.add(c)
         
 
 
