@@ -58,13 +58,13 @@ for x in range(sizeX):
     for y in range(sizeY):
         if structure[x][y] == 1:
             
-            stitch = gdstk.rectangle((x*length, y*length+length/2-avg_width/2), (x*length+length, y*length+length/2+avg_width/2), layer=1, datatype=22)
+            stitch = gdstk.rectangle((x*length, y*length+length/2-avg_width/2), (x*length+length, y*length+length/2+avg_width/2), layer=71, datatype=20)
             stitch2 = stitch.copy()
             stitch.rotate(45, center=(x*length+length/2, y*length+length/2))
             stitch2.rotate(-45, center=(x*length+length/2, y*length+length/2))
 
             
-            combined = gdstk.boolean(stitch, stitch2, 'or', layer=1, datatype=22)
+            combined = gdstk.boolean(stitch, stitch2, 'or', layer=71, datatype=20)
             for c in combined:
                 c.fillet(avg_width/4)
                 cell.add(c)
