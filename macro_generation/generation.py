@@ -66,7 +66,7 @@ cell = lib.new_cell("my_logo")
 # Create 3x2 grid of structures with padding
 padding = length * 1.0  # Padding between structures
 grid_size_x = 3  # 3 in x direction
-grid_size_y = 1  # 2 in y direction
+grid_size_y = 2  # 2 in y direction
 
 for grid_x in range(grid_size_x):
     for grid_y in range(grid_size_y):
