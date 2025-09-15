@@ -3,7 +3,7 @@
       "my_logo": {
         "instances": {
           "logo": {
-            "location": [17, 3],
+            "location": [15, 3],
             "orientation": "N"
           }
         },
@@ -79,7 +79,7 @@
   "FP_IO_HLENGTH": 2,
   "FP_IO_VLENGTH": 2,
 
-  "FP_PDN_VPITCH": 200,
+  "FP_PDN_VPITCH": 500,
   "FP_PDN_VOFFSET": 5,
 
   "//": "Clock",
