@@ -5,6 +5,7 @@
 
 `default_nettype none
 
+// Blackbox module for my_logo - this will be replaced by the actual macro during synthesis
 (* blackbox *) (* keep *)
 module my_logo ();
 endmodule
